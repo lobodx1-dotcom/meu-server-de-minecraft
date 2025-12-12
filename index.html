@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como acessar meu servidor • Lobato</title>
+
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #4f4fff, #8b44ff);
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 20px;
+      max-width: 850px;
+      width: 100%;
+      box-shadow: 0 0 25px rgba(0,0,0,0.25);
+      color: white;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    /* VIDEO ELEGANTE */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .video-wrapper::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+
+    #videoPlayer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* CAIXAS */
+    .caixa-bloco {
+      margin-top: 25px;
+    }
+
+    .titulo-caixa {
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 17px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 90px;
+      border-radius: 12px;
+      border: none;
+      padding: 12px;
+      font-size: 15px;
+      resize: none;
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+      outline: none;
+      backdrop-filter: blur(4px);
+    }
+
+    /* BOTÃO MODERNO */
+    .btn-copiar {
+      margin-top: 7px;
+      padding: 12px 15px;
+      background: linear-gradient(135deg, #00d084, #00b46c);
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.25s;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .btn-copiar:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #00e691, #00c77a);
+    }
+
+    .icone {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🎮 Como acessar meu servidor de Minecraft</h1>
+  <p style="text-align:center; margin-bottom:20px;">Tutorial completo no vídeo abaixo! 💜</p>
+
+  <div class="video-wrapper">
+    <video id="videoPlayer" controls>
+      <source src="Gravação de Tela 2025-12-11 104634.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos.
+    </video>
+  </div>
+
+  <h2>Informações importantes</h2>
+
+  <!-- CAIXA 1 -->
+  <div class="caixa-bloco">
+    <div class="titulo-caixa">nome do servidor</div>
+    <textarea id="cx1" readonly>wolf world gamer</textarea>
+    <button class="btn-copiar" onclick="copiar('cx1')">
+      <span class="icone">📋</span> Copiar
+    </button>
+  </div>
+
+  <!-- CAIXA 2 -->
+  <div class="caixa-bloco">
+    <div class="titulo-caixa">endereço de servidor</div>
+    <textarea id="cx2" readonly>lobato1210.aternos.me</textarea>
+    <button class="btn-copiar" onclick="copiar('cx2')">
+      <span class="icone">📋</span> Copiar
+    </button>
+  </div>
+
+  <!-- CAIXA 3 -->
+  <div class="caixa-bloco">
+    <div class="titulo-caixa">porta de servidor</div>
+    <textarea id="cx3" readonly>63609</textarea>
+    <button class="btn-copiar" onclick="copiar('cx3')">
+      <span class="icone">📋</span> Copiar
+    </button>
+  </div>
+
+</div>
+
+<script>
+  function copiar(id) {
+    const texto = document.getElementById(id);
+    texto.select();
+    texto.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(texto.value);
+    
+    // Aviso bonito
+    alert("Texto copiado com sucesso! ✔️");
+  }
+</script>
+
+</body>
+</html>
